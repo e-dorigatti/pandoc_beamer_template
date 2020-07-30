@@ -1,0 +1,266 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[ignorenonframetext,]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+\centering
+\begin{beamercolorbox}[sep=16pt,center]{part title}
+  \usebeamerfont{part title}\insertpart\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{part title}
+  \usebeamerfont{subsection title}\insertsubsection\par
+\end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    %\frame{\sectionpage}
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+\usetheme[]{Warsaw}
+\usecolortheme{beaver}
+\useoutertheme{infolines}
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Presentation template (long title)},
+            pdfauthor={Author Name},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\newif\ifbibliography
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+
+\title[template (short title)]{Presentation template (long title)}
+\author{Author Name}
+\providecommand{\institute}[1]{}
+\institute[INST1, INST2]{Institute 1 \and Institute 2 \newline on two lines}
+\date{\today}
+
+\begin{document}
+\frame{\titlepage}
+
+\hypertarget{section-title}{%
+\section{Section title}\label{section-title}}
+
+\begin{frame}{Slide title}
+\protect\hypertarget{slide-title}{}
+Some content:
+
+\begin{itemize}
+\tightlist
+\item
+  See {[}\protect\hyperlink{ref-gptNIPS}{1}{]} (clickable reference)
+
+  \begin{enumerate}
+  \tightlist
+  \item
+    This means you screwed up the references: {[}{\textbf{???}}{]}
+  \end{enumerate}
+\item
+  \emph{Italic}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Bold}
+  \end{itemize}
+\end{itemize}
+
+Vertical space to better separate things aa
+\end{frame}
+
+\hypertarget{section-2}{%
+\section{Section 2}\label{section-2}}
+
+\begin{frame}{A fictional theoretical basis}
+\protect\hypertarget{a-fictional-theoretical-basis}{}
+An equation to appear smart:
+
+\begin{equation}
+\mathcal{L}=-\frac 1 N \sum_{i=1}^N \log p(y_i|x_i,\theta)+\sum_{i=1}^L \frac{\lambda^2 p^{keep}_i}{2N}||\theta_i||_2^2
+\label{eq1}
+\end{equation}
+\end{frame}
+
+\begin{frame}[fragile]{Pretending that something was actually done}
+\protect\hypertarget{pretending-that-something-was-actually-done}{}
+BAYESIAN DEEP LEARNING IN ONE SLIDE !!1!1!!1
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{l2 }\OperatorTok{=}\NormalTok{ (}\DecValTok{1} \OperatorTok{{-}}\NormalTok{ pdrop) }\OperatorTok{*}\NormalTok{ length\_scale\_squared }\OperatorTok{/}\NormalTok{ (}\DecValTok{2} \OperatorTok{*}\NormalTok{ bsize)}
+
+\NormalTok{inp }\OperatorTok{=}\NormalTok{ x }\OperatorTok{=}\NormalTok{ layers.Input(shape}\OperatorTok{=}\NormalTok{(}\DecValTok{2}\NormalTok{,))  }\CommentTok{\# input}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ layers.Dense(}\DecValTok{200}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}relu\textquotesingle{}}\NormalTok{,}
+\NormalTok{                 kernel\_regularizer}\OperatorTok{=}\NormalTok{regularizers.l2(l2))(x)}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ layers.Dropout(pdrop)(x, training}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ layers.Dense(}\DecValTok{200}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}sigmoid\textquotesingle{}}\NormalTok{,}
+\NormalTok{                 kernel\_regularizer}\OperatorTok{=}\NormalTok{regularizers.l2(l2))(x)}
+\NormalTok{x }\OperatorTok{=}\NormalTok{ layers.Dropout(pdrop)(x, training}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\NormalTok{out }\OperatorTok{=}\NormalTok{ layers.Dense(}\DecValTok{2}\NormalTok{, activation}\OperatorTok{=}\StringTok{\textquotesingle{}tanh\textquotesingle{}}\NormalTok{,}
+\NormalTok{                   kernel\_regularizer}\OperatorTok{=}\NormalTok{regularizers.l2(l2))(x)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\hypertarget{section-3}{%
+\section{Section 3}\label{section-3}}
+
+\begin{frame}{A nice centered picture}
+\protect\hypertarget{a-nice-centered-picture}{}
+\centering\includegraphics[width=0.5\linewidth,height=0.5\textheight]{example-image-a}
+\end{frame}
+
+\begin{frame}{``Layouts''}
+\protect\hypertarget{layouts}{}
+Two-columns content following this very long line that is in a single column and wraps:
+
+\begin{columns}
+\column{0.6\textwidth}
+
+Fancy linear models (unlike Eq. \ref{eq1})
+
+$$
+\log\frac{p(C_p|a_{p-4},\ldots,a_{p+1})}{p(C_p)}
+= \sum_{i=-4}^1 \phi(a_{p+i}, i)
+$$
+
+\column{0.4\textwidth}
+
+\begin{figure}
+\centering\includegraphics[width=0.95\linewidth]{example-image-b}
+\caption{A figure}
+\label{fig}
+\end{figure}
+
+\begin{table}
+\begin{tabular}{cc}
+a & b \\
+\hline
+1 & 2 \\
+3 & 4 \\
+\end{tabular}
+\caption{A table (also see Fig. \ref{fig})}
+\end{table}
+
+\end{columns}
+\end{frame}
+
+\hypertarget{thank-you}{%
+\section{Thank you!}\label{thank-you}}
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\begin{frame}[allowframebreaks]{References}
+\hypertarget{refs}{}
+\begin{cslreferences}
+\leavevmode\hypertarget{ref-gptNIPS}{}%
+1. GPT-5. A very important discovery about deep learning. In: Advances in neural information processing systems 42+\(\pi\). pp. --3--14.
+\end{cslreferences}
+\end{frame}
+
+\end{document}
