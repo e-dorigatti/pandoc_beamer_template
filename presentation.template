@@ -318,12 +318,19 @@ $for(bibliography)$
 $endfor$
 $endif$
 $if(csl-refs)$
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
-\newenvironment{cslreferences}%
+\newenvironment{CSLReferences}%
   {$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
   \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
   {\par}
+\usepackage{calc} % for \widthof, \maxof
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\maxof{\widthof{#1}}{\csllabelwidth}}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
 $if(title)$
