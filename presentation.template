@@ -345,7 +345,11 @@ $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
 $if(author)$
+\author[$short-author$]{$for(author)$$author$$sep$ \and $endfor$}
+$if(short-author)$
+$else$
 \author{$for(author)$$author$$sep$ \and $endfor$}
+$endif$
 $endif$
 $if(institute)$
 \providecommand{\institute}[1]{}
